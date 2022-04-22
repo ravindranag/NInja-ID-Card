@@ -29,7 +29,25 @@ class NinjaCard extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
-        child: ,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+                'NAME',
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    letterSpacing: 2,
+                  color: Colors.blueGrey
+                )
+            ),
+            Text(
+                'Ravindra Nag',
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    letterSpacing: 2,
+                  color: Colors.black
+                )
+            ),
+          ],
+        ),
       )
     );
   }
