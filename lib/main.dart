@@ -36,8 +36,15 @@ class NinjaCard extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Center(
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('assets/ninja.png'),
+                  radius: 100,
+                ),
+              ),
+              SizedBox(height: 40,),
               Text(
                   'NAME',
                   style: Theme.of(context).textTheme.labelLarge?.apply(
@@ -50,7 +57,7 @@ class NinjaCard extends StatelessWidget {
                     color: Colors.black
                   )
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 40),
               Text(
                   'CURRENT NINJA LEVEL',
                   style: Theme.of(context).textTheme.labelLarge?.apply(
@@ -63,9 +70,17 @@ class NinjaCard extends StatelessWidget {
                       color: Colors.black
                   )
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 40),
+              Text(
+                  'CONTACT THIS NINJA',
+                  style: Theme.of(context).textTheme.labelLarge?.apply(
+                      color: Colors.blueGrey
+                  )
+              ),
+              SizedBox(height: 4),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
                     Icons.email,
@@ -77,11 +92,58 @@ class NinjaCard extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleLarge,
                   )
                 ],
-              )
-            ],
+              ),
+              SizedBox(height: 40,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    children: [
+                      ElevatedButton(
+                          onPressed: () {},
+                          child: Icon(
+                            Icons.thumb_up
+                          ),
+                        style: ElevatedButton.styleFrom(
+                          shape: new CircleBorder(),
+                          padding: EdgeInsets.all(20),
+                          elevation: 0
+                        ),
+                      ),
+                      SizedBox(width: 10,),
+                      Text(
+                        '20',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: 50),
+                  Row(
+                    children:[
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Icon(
+                            Icons.thumb_down
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            shape: new CircleBorder(),
+                            padding: EdgeInsets.all(20),
+                            elevation: 0
+                        ),
+                      ),
+                      SizedBox(width: 10,),
+                      Text(
+                        '20',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      )
+                    ]
+                  )
+                ],
+              ),
+            ]
           ),
         )
-      ),
+      )
     );
   }
 }
