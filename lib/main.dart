@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(NinjaCard());
+  runApp(const NinjaCard());
 }
 
 class NinjaCard extends StatelessWidget {
@@ -21,7 +19,7 @@ class NinjaCard extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
               'Ninja ID Card',
             style: TextStyle(
               color: Colors.black,
@@ -34,17 +32,17 @@ class NinjaCard extends StatelessWidget {
           backgroundColor: Colors.transparent,
         ),
         body: Padding(
-          padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
+          padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Center(
+              const Center(
                 child: CircleAvatar(
                   backgroundImage: AssetImage('assets/ninja.png'),
                   radius: 100,
                 ),
               ),
-              SizedBox(height: 40,),
+              const SizedBox(height: 40,),
               Text(
                   'NAME',
                   style: Theme.of(context).textTheme.labelLarge?.apply(
@@ -57,7 +55,7 @@ class NinjaCard extends StatelessWidget {
                     color: Colors.black
                   )
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Text(
                   'CURRENT NINJA LEVEL',
                   style: Theme.of(context).textTheme.labelLarge?.apply(
@@ -70,30 +68,30 @@ class NinjaCard extends StatelessWidget {
                       color: Colors.black
                   )
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Text(
                   'CONTACT THIS NINJA',
                   style: Theme.of(context).textTheme.labelLarge?.apply(
                       color: Colors.blueGrey
                   )
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.email,
                     // size: 30,
                   ),
-                  SizedBox(width: 10,),
+                  const SizedBox(width: 10,),
                   Text(
                       'ravindranag52@gmail.com',
                     style: Theme.of(context).textTheme.titleLarge,
                   )
                 ],
               ),
-              SizedBox(height: 40,),
+              const SizedBox(height: 40,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -101,37 +99,37 @@ class NinjaCard extends StatelessWidget {
                     children: [
                       ElevatedButton(
                           onPressed: () {},
-                          child: Icon(
+                          child: const Icon(
                             Icons.thumb_up
                           ),
                         style: ElevatedButton.styleFrom(
-                          shape: new CircleBorder(),
-                          padding: EdgeInsets.all(20),
+                          shape: const CircleBorder(),
+                          padding: const EdgeInsets.all(20),
                           elevation: 0
                         ),
                       ),
-                      SizedBox(width: 10,),
+                      const SizedBox(width: 10,),
                       Text(
                         '20',
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                     ],
                   ),
-                  SizedBox(width: 50),
+                  const SizedBox(width: 50),
                   Row(
                     children:[
                       ElevatedButton(
                         onPressed: () {},
-                        child: Icon(
+                        child: const Icon(
                             Icons.thumb_down
                         ),
                         style: ElevatedButton.styleFrom(
-                            shape: new CircleBorder(),
-                            padding: EdgeInsets.all(20),
+                            shape: const CircleBorder(),
+                            padding: const EdgeInsets.all(20),
                             elevation: 0
                         ),
                       ),
-                      SizedBox(width: 10,),
+                      const SizedBox(width: 10,),
                       Text(
                         '20',
                         style: Theme.of(context).textTheme.titleLarge,
