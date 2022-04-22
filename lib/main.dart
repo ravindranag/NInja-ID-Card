@@ -50,6 +50,34 @@ class NinjaCard extends StatelessWidget {
                     color: Colors.black
                   )
               ),
+              SizedBox(height: 20),
+              Text(
+                  'CURRENT NINJA LEVEL',
+                  style: Theme.of(context).textTheme.labelLarge?.apply(
+                      color: Colors.blueGrey
+                  )
+              ),
+              Text(
+                  '8',
+                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                      color: Colors.black
+                  )
+              ),
+              SizedBox(height: 20),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.email,
+                    // size: 30,
+                  ),
+                  SizedBox(width: 10,),
+                  Text(
+                      'ravindranag52@gmail.com',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  )
+                ],
+              )
             ],
           ),
         )
