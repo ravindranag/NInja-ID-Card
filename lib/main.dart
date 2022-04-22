@@ -1,11 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: NinjaCard()
-  ));
+  runApp(NinjaCard());
 }
 
 class NinjaCard extends StatelessWidget {
@@ -13,42 +12,48 @@ class NinjaCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-            'Ninja ID Card',
-          style: TextStyle(
-            color: Colors.black,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.bold
-          ),
-        ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
+    return MaterialApp(
+      title: 'Ninja ID Card',
+      theme: ThemeData(
+        textTheme: GoogleFonts.interTextTheme(
+          Theme.of(context).textTheme
+        )
       ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-                'NAME',
-                style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                    letterSpacing: 2,
-                  color: Colors.blueGrey
-                )
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+              'Ninja ID Card',
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.bold
             ),
-            Text(
-                'Ravindra Nag',
-                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    letterSpacing: 2,
-                  color: Colors.black
-                )
-            ),
-          ],
+          ),
+          centerTitle: true,
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
-      )
+        body: Padding(
+          padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                  'NAME',
+                  style: Theme.of(context).textTheme.labelLarge?.apply(
+                    color: Colors.blueGrey
+                  )
+              ),
+              Text(
+                  'Ravindra Nag',
+                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    color: Colors.black
+                  )
+              ),
+            ],
+          ),
+        )
+      ),
     );
   }
 }
