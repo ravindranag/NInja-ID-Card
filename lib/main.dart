@@ -5,8 +5,16 @@ void main() {
   runApp(const NinjaCard());
 }
 
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
   const NinjaCard({Key? key}) : super(key: key);
+
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+
+  int ninjaLevel = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +71,7 @@ class NinjaCard extends StatelessWidget {
                   )
               ),
               Text(
-                  '8',
+                  '$ninjaLevel',
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                       color: Colors.black
                   )
@@ -98,19 +106,24 @@ class NinjaCard extends StatelessWidget {
                   Row(
                     children: [
                       ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              ninjaLevel++;
+                            });
+                          },
                           child: const Icon(
                             Icons.thumb_up
                           ),
                         style: ElevatedButton.styleFrom(
                           shape: const CircleBorder(),
                           padding: const EdgeInsets.all(20),
-                          elevation: 0
+                          elevation: 0,
+                          primary: Colors.green
                         ),
                       ),
                       const SizedBox(width: 10,),
                       Text(
-                        '20',
+                        '+1',
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                     ],
@@ -119,19 +132,24 @@ class NinjaCard extends StatelessWidget {
                   Row(
                     children:[
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            ninjaLevel--;
+                          });
+                        },
                         child: const Icon(
-                            Icons.thumb_down
+                          Icons.thumb_down
                         ),
                         style: ElevatedButton.styleFrom(
-                            shape: const CircleBorder(),
-                            padding: const EdgeInsets.all(20),
-                            elevation: 0
-                        ),
+                          shape: const CircleBorder(),
+                          padding: const EdgeInsets.all(20),
+                          elevation: 0,
+                          primary: Colors.red
+                        )
                       ),
                       const SizedBox(width: 10,),
                       Text(
-                        '20',
+                        '-1',
                         style: Theme.of(context).textTheme.titleLarge,
                       )
                     ]
